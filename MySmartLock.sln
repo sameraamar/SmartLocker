@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySmartLockWatchDog", "MySmartLockService\MySmartLockWatchDog.csproj", "{5885B2DF-D269-48CF-A6DB-02FFE23D2A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySmartLockUI", "MySmartLockUI\MySmartLockUI.csproj", "{CCE39751-F54B-47BB-B81A-0F926B48EDE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySmartLockTester", "MySmartLockTester\MySmartLockTester.csproj", "{5C8AEE90-100A-4A7E-9162-AE9C3C3597BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5885B2DF-D269-48CF-A6DB-02FFE23D2A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5885B2DF-D269-48CF-A6DB-02FFE23D2A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5885B2DF-D269-48CF-A6DB-02FFE23D2A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5885B2DF-D269-48CF-A6DB-02FFE23D2A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE39751-F54B-47BB-B81A-0F926B48EDE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE39751-F54B-47BB-B81A-0F926B48EDE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE39751-F54B-47BB-B81A-0F926B48EDE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE39751-F54B-47BB-B81A-0F926B48EDE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C8AEE90-100A-4A7E-9162-AE9C3C3597BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8AEE90-100A-4A7E-9162-AE9C3C3597BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8AEE90-100A-4A7E-9162-AE9C3C3597BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C8AEE90-100A-4A7E-9162-AE9C3C3597BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2721A4DA-46A2-4532-9754-24698D8417F6}
+	EndGlobalSection
+EndGlobal
