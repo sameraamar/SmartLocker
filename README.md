@@ -9,3 +9,4 @@ Smart (Timed) Screen Locker for better parental control
 
 
 The UI asks to get one time password which is based on the user name, date time, and a random number.
+
