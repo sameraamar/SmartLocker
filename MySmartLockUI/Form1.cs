@@ -28,15 +28,12 @@ namespace MySmartLockUI
 
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Modifiers == Keys.Control)
+            if ((e.Modifiers & Keys.Control) == Keys.Control && (e.Modifiers & Keys.Alt) == Keys.Alt)
             {
                 switch (e.KeyCode)
                 {
-                    case Keys.C:
-                        MessageBox.Show("Ctrl + C was pressed!");
-                        break;
-                    case Keys.S:
-                        MessageBox.Show("Ctrl + S was pressed!");
+                    case Keys.X:
+                        MessageBox.Show("Leaving!");
                         Close();
                         break;
                 }
@@ -48,8 +45,10 @@ namespace MySmartLockUI
             ActiveControl = txtCode2;
 
             var screen = Screen.GetWorkingArea(this);
-            Height = screen.Height * 4 / 5 ;
-            Width = screen.Width * 4 / 5;
+
+            int domin = 3;
+            Height = screen.Height * domin / 5 ;
+            Width = screen.Width * domin / 5;
 
             CenterToScreen();
         }
@@ -143,7 +142,7 @@ namespace MySmartLockUI
                 WindowState = FormWindowState.Minimized;
             }
 
-            if (OneTimePasswordUtil.IsMasterCodeV2(txtCode1.Text, code1, code2))
+            if (OneTimePasswordUtil.IsMasterCodeV2(txtName.Text, code1, code2))
             {
                 Close();
             }
@@ -151,6 +150,11 @@ namespace MySmartLockUI
 
         private void txtCode_TextChanged_1(object sender, EventArgs e)
         {
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
