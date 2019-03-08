@@ -3,3 +3,7 @@
 ################################################################################
 
 /MySmartLock/bin/Debug
+/MySmartLock/MySmartLockService/obj/Debug
+/MySmartLock/MySmartLockTester/obj/Debug
+/MySmartLock/MySmartLockUI/obj/Debug
+/MySmartLock/.vs/MySmartLock/v15
