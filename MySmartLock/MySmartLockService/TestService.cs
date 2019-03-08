@@ -25,11 +25,17 @@ namespace MySmartLockWatchDog
 
             timeDelay = new System.Timers.Timer();
             timeDelay.Elapsed += WorkProcess;
-            this.timeDelay.Interval = 1000 * 60 * 5; // 5 minutes
+            this.timeDelay.Interval = 1000; 
         }
 
         public void WorkProcess(object sender, EventArgs e)
         {
+            if (this.timeDelay.Interval.Equals(1000))
+            {
+                this.timeDelay.Interval = 1000 * 60 * 5; // 5 minutes
+            }
+
+
             count++;
             string msg = "Timer Tick(1): " + count;
             //LogService(msg);
@@ -72,6 +78,7 @@ namespace MySmartLockWatchDog
         protected override void OnStart(string[] args)
         {
             LogService("Service is Started");
+            WorkProcess(null, null);
             timeDelay.Enabled = true;
         }
 

@@ -10,7 +10,7 @@ namespace MySmartLockUI
     {
         private static readonly int[] bits = 
         {
-            1, 2, 4, 6, 8, 16, 32, 64
+            1, 2, 4, 8, 16, 32, 64
         };
 
         private static readonly long PrimeNumber = 15486719;
@@ -34,7 +34,6 @@ namespace MySmartLockUI
         {
             string code = "0";
             int sum = 0;
-            int len = userName.Length;
 
             foreach (var c in userName.ToUpper())
             {
@@ -48,28 +47,25 @@ namespace MySmartLockUI
                 code += bitAnd;
             }
 
-
-            long bitcoding = long.Parse(code);
-
-            long res = bitcoding * len + len;
-
-
-            // get time hout
-            long datetime = long.Parse(DateTime.Now.ToString("yyyyMMddhh"));
-            res = res * datetime + datetime;
-
-            return res;
+            return long.Parse(code);
         }
 
-        public static bool IsValidV2(string userNanme, long passCode, long verificationNumber)
+        public static bool IsValidV2(string userNanme, long code1, long code2)
         {
-            if (passCode == 0 || verificationNumber == 0 || string.IsNullOrEmpty(userNanme))
+            if (code1 == 0 || code2 == 0 || string.IsNullOrEmpty(userNanme))
                 return false;
             
             long userCode = EncodeName(userNanme);
 
-            long verification = (userCode - passCode) % PrimeNumber;
-            return verification == verificationNumber;
+            int len = userNanme.Length;
+
+            // get time hout
+            long datetime = long.Parse(DateTime.Now.ToString("yyyyMMddHH"));
+
+            long temp = len + datetime + userCode + code1;
+            long verification = temp % PrimeNumber;
+
+            return verification == code2;
         }
 
         public static bool IsMasterCodeV2(string userName, long passCode, long verificationNumber)
