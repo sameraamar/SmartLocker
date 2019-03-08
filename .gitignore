@@ -2,7 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/MySmartLock/bin/Debug
 /MySmartLock/MySmartLockService/obj/Debug
 /MySmartLock/MySmartLockTester/obj/Debug
 /MySmartLock/MySmartLockUI/obj/Debug
