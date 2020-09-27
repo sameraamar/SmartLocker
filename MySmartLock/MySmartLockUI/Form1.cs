@@ -41,7 +41,7 @@ namespace MySmartLockUI
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            timer1.Interval = 1000 * 60 * 60;
+            timer1.Interval = 1000 * 10 ;  // in milliseconds
             ActiveControl = txtCode2;
 
             var screen = Screen.GetWorkingArea(this);
@@ -126,8 +126,7 @@ namespace MySmartLockUI
         {
             if (!long.TryParse(txtCode1.Text, out long code1))
             {
-                txtCode1.Text = "";
-                txtCode1.Focus();
+                txtCode1.Text = OneTimePasswordUtil.RandomCode1().ToString();
             }
 
             if (!long.TryParse(txtCode2.Text, out long code2))
@@ -136,9 +135,20 @@ namespace MySmartLockUI
                 txtCode2.Focus();
             }
 
-            if (OneTimePasswordUtil.IsValidV2(txtName.Text, code1, code2))
+            if (!int.TryParse(txtMinutes.Text, out int minutes))
+            {
+                txtMinutes.Text = "";
+                txtMinutes.Focus();
+            }
+
+            if (OneTimePasswordUtil.IsValidV2(txtName.Text, minutes, code1, code2))
             {
                 timer1.Enabled = true;
+
+                txtCode1.Text = "";
+                txtCode2.Text = "";
+                timer1.Interval = 1000 * minutes * 60;  // in milliseconds
+
                 WindowState = FormWindowState.Minimized;
             }
 
@@ -155,6 +165,14 @@ namespace MySmartLockUI
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            if (txtCode1.Text == "")
+            {
+                txtCode1.Text = OneTimePasswordUtil.RandomCode1().ToString();
+            }
         }
     }
 

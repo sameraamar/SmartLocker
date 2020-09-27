@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MySmartLockUI
 {
+    using System.Windows.Forms.Layout;
+
     public class OneTimePasswordUtil
     {
         private static readonly int[] bits = 
@@ -13,7 +12,13 @@ namespace MySmartLockUI
             1, 2, 4, 8, 16, 32, 64
         };
 
-        private static readonly long PrimeNumber = 15486719;
+        private static readonly int PrimeNumber = 15486719;
+        private static Random rnd = new Random();
+
+        public static int RandomCode1()
+        {
+            return rnd.Next(PrimeNumber);
+        }
 
         public static bool IsValidV1(string userNanme, string passCode)
         {
@@ -50,19 +55,17 @@ namespace MySmartLockUI
             return long.Parse(code);
         }
 
-        public static bool IsValidV2(string userNanme, long code1, long code2)
+        public static bool IsValidV2(string userNanme, int minutes, long code1, long code2)
         {
             if (code1 == 0 || code2 == 0 || string.IsNullOrEmpty(userNanme))
                 return false;
             
             long userCode = EncodeName(userNanme);
-
-            int len = userNanme.Length;
-
+            
             // get time hout
             long datetime = long.Parse(DateTime.Now.ToString("yyyyMMddHH"));
 
-            long temp = len + datetime + userCode + code1;
+            long temp = minutes * datetime + userCode + code1;
             long verification = temp % PrimeNumber;
 
             return verification == code2;
@@ -70,12 +73,12 @@ namespace MySmartLockUI
 
         public static bool IsMasterCodeV2(string userName, long passCode, long verificationNumber)
         {
-            if (!IsValidV2(userName, passCode, verificationNumber))
+            if (!userName.Equals("Samer", StringComparison.InvariantCultureIgnoreCase))
             {
                 return false;
             }
 
-            return userName.Equals("Samer");
+            return IsValidV2(userName, 1, passCode, verificationNumber);
         }
 
     }

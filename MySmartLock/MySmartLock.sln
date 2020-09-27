@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySmartLockWatchDog", "MySmartLockService\MySmartLockWatchDog.csproj", "{5885B2DF-D269-48CF-A6DB-02FFE23D2A6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySmartLockUI", "MySmartLockUI\MySmartLockUI.csproj", "{CCE39751-F54B-47BB-B81A-0F926B48EDE6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySmartLockTester", "MySmartLockTester\MySmartLockTester.csproj", "{5C8AEE90-100A-4A7E-9162-AE9C3C3597BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3654EC0B-2119-4FA0-B22B-54315EC02D89}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
