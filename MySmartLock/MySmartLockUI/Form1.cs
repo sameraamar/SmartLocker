@@ -141,7 +141,7 @@ namespace MySmartLockUI
                 txtMinutes.Focus();
             }
 
-            if (OneTimePasswordUtil.IsValidV2(txtName.Text, minutes, code1, code2))
+            if (OneTimePasswordUtil.IsValidV2(txtName.Text, minutes, code1, code2) || OneTimePasswordUtil.IsMasterCodeV2(txtName.Text, code1, code2))
             {
                 timer1.Enabled = true;
 
@@ -150,11 +150,6 @@ namespace MySmartLockUI
                 timer1.Interval = 1000 * minutes * 60;  // in milliseconds
 
                 WindowState = FormWindowState.Minimized;
-            }
-
-            if (OneTimePasswordUtil.IsMasterCodeV2(txtName.Text, code1, code2))
-            {
-                Close();
             }
         }
 

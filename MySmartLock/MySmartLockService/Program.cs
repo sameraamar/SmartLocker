@@ -12,7 +12,7 @@
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new TestService()
+                new TestService(true)
             };
             ServiceBase.Run(ServicesToRun);
         }
