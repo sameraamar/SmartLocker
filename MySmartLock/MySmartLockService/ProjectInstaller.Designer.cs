@@ -40,6 +40,7 @@
             // serviceInstaller1
             // 
             this.serviceInstaller1.ServiceName = "My Smart Locker Watch Dog";
+            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 

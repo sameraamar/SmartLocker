@@ -12,7 +12,7 @@
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new TestService(true)
+                new SmartLockWatchDogService(true)
             };
             ServiceBase.Run(ServicesToRun);
         }

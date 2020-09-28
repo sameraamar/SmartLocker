@@ -61,11 +61,11 @@
     <Compile Include="ProjectInstaller.Designer.cs">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestService.cs">
+    <Compile Include="SmartLockWatchDogService.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TestService.Designer.cs">
-      <DependentUpon>TestService.cs</DependentUpon>
+    <Compile Include="SmartLockWatchDogService.Designer.cs">
+      <DependentUpon>SmartLockWatchDogService.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +77,8 @@
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestService.resx">
-      <DependentUpon>TestService.cs</DependentUpon>
+    <EmbeddedResource Include="SmartLockWatchDogService.resx">
+      <DependentUpon>SmartLockWatchDogService.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
